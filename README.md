@@ -1,6 +1,6 @@
 # Grape ripeness estimation via hyperspectral imaging
 
-This repository contains the code to reproduce the experiments reported in the paper titled [On-the-Go Table Grape Ripeness Estimation Via Proximal Snapshot Hyperspectral Imaging](https://dx.doi.org/10.2139/ssrn.4696990)."
+This repository contains the code to reproduce the experiments reported in the paper titled [On-the-Go Table Grape Ripeness Estimation Via Proximal Snapshot Hyperspectral Imaging](https://dx.doi.org/10.2139/ssrn.4696990).
 
 # Folders structure
 
