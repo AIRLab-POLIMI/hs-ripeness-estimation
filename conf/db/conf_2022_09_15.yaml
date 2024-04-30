@@ -1,0 +1,91 @@
+year: 2022
+date: 2022-09-15_nowhite_scaleing3
+date_str: '2022-09-15_nowhite_scaleing3'
+camera: Senop
+chemical_data: Vendemmia
+calibration:
+  source_folder: /home/user/data/raw/2022-09-15/Senop/50_bands_wide_505-905_nm
+  target_folder: /home/user/data/interim/calibrated/${db.date}
+  batch_size: 10
+  geometric:
+    distortion_1_name: /workspace/models/calibration/distortion_2022_1.txt
+    distortion_2_name: /workspace/models/calibration/distortion_2022_2.txt
+    intrinsic_matrix_1_name: /workspace/models/calibration/intrinsic_matrix_2022_1.txt
+    intrinsic_matrix_2_name: /workspace/models/calibration/intrinsic_matrix_2022_2.txt
+    selected_range_start: 1
+    selected_range_stop: 53
+    sensor_boundary: 20
+  radiometric:
+    name_hdr: /home/user/data/raw/2022-09-15/Senop_white_calibration_3ms/50_bands_wide_505-905_nm/50_bands_wide_505-905_nm_000004/50_bands_wide_505-905_nm_000004.hdr
+    name_dat: /home/user/data/raw/2022-09-15/Senop_white_calibration_3ms/50_bands_wide_505-905_nm/50_bands_wide_505-905_nm_000004/50_bands_wide_505-905_nm_000004.dat
+    second_hdr: null
+    second_dat: null
+    wavelength_range_start: 0
+    wavelength_range_stop: 53
+    panel_config: [[238, 329, 463, 563], [238, 332, 624, 740], [453, 542, 459, 573], [453, 546, 639, 770]] # W LG DG B
+    panel_vals: /home/user/data/raw/Mapir_panel_values/panel_values.xlsx
+    dark_curr: /home/user/data/raw/2022-09-15/Senop_dark_calibration_white_time_3ms/50_bands_wide_505-905_nm
+    dark_curr_target: /home/user/data/raw/2022-09-15/Senop_dark_calibration_target_time_10ms/50_bands_wide_505-905_nm
+    calibration_time: 3
+    target_time: 10
+    scale: 1.
+    scaling: 3
+    threshold: false
+    year_bands: [505.0,510.0,513.2,521.3,529.5,537.7,545.8,554.0,556.5,562.1,570.3,578.5,586.6,594.8,600.0,603.0,611.1,619.3,627.4,635.6,643.8,651.9,660.1,668.3,676.4,684.6,692.8,700.9,709.1,717.2,725.4,733.6,741.7,749.9,758.1,766.2,774.4,782.6,790.7,798.9,807.0,815.2,823.4,831.5,839.7,847.9,856.0,864.2,872.3,880.5,888.7,896.8,905.0]
+registration:
+  general:
+    source_folder: /home/user/data/interim/calibrated/${db.date}
+    target_folder: /home/user/data/interim/registered/${db.date}
+    batch_size: 10
+    selected_range_start: 1
+    selected_range_stop: 53
+    false_RGB: [1,8,14]
+  intensity:
+    do_psr: false
+    ref_band: 28
+    sequential: false
+  feature:
+    do_sift: false
+    ref_band: 28
+    sequential: true
+    n_features: 1000
+    percentage: 0.9
+  sitk:
+    do_sitk: true
+    ref_band_sitk: 28
+    max_shift: 400 # NB
+    samples_per_axis: 20 # NB 
+    n_histogram_bins: 100
+    convergence_window_size: 10
+    convergence_min_value: 1.0e-6
+    n_iterations: 100
+segmentation:
+  config_file: /workspace/src/segmentation/configs/wgisd_train_cfg.yaml
+  weights_file: /workspace/models/segmentation/grape-152_final.pth
+  source_folder: /home/user/data/interim/registered/${db.date}
+  RGB_prefix: /false_RGB
+  target_folder: /home/user/data/interim/segmented/${db.date}
+  threshold: 0.99
+  scale: 1
+  apply_mask: true
+  data_path: /workspace/src/segmentation/output/coco_instances_results.json
+  annotation_path: /home/user/data/interim/segmented/${db.date}/annotations_pure
+  annotation_CVAT: /home/user/data/interim/segmented/${db.date}/annotations_processed
+  hypercubes_plots: true
+  hypercubes_files: false
+  false_RGB: [2,8,15]
+  selected_range_start: 1
+  selected_range_stop: 53
+  chemical_file: /home/user/data/raw/lab_analyses/2021/redglobe_2021_lab_analyses.xlsx
+  sheet_name: Vendemmia
+  year_bands: [500.0,508.2,510.0,516.3,524.5,532.7,540.8,549.0,556.5,557.1,565.3,573.5,581.6,589.8,598.0,600.0,606.1,614.3,622.4,630.6,638.8,646.9,655.1,663.3,671.4,679.6,687.8,695.9,704.1,712.2,720.4,728.6,736.7,744.9,753.1,761.2,769.4,777.6,785.7,793.9,802.0,810.2,818.4,826.5,834.7,842.9,851.0,859.2,867.3,875.5,883.7,891.8,900.0]
+  chem_ind: 7
+  new_df_folder: /home/user/data/processed/${db.date}
+  new_df_name: dataset
+  excel_copy: true
+  plot_spectra: true
+  plot_batch_size: 7
+  curve_start_ind: 5
+  curve_end_ind: 12
+  cleaning_debug: true
+  cleaning_parameter: 3
