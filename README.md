@@ -1,6 +1,6 @@
 # Grape ripeness estimation via hyperspectral imaging
 
-This repository contains the code to reproduce the experiments reported in the paper titled [On-the-Go Table Grape Ripeness Estimation Via Proximal Snapshot Hyperspectral Imaging](https://dx.doi.org/10.2139/ssrn.4696990).
+This repository contains the code to reproduce the experiments reported in the paper titled [On-the-Go Table Grape Ripeness Estimation Via Proximal Snapshot Hyperspectral Imaging](https://doi.org/10.1016/j.compag.2024.109354).
 
 # Folders structure
 
@@ -103,3 +103,17 @@ $ python prediction/pls.py &nbsp;&nbsp;\\
 $ python prediction/pls.py &nbsp;&nbsp;\\   
 &nbsp;&nbsp;&nbsp;&nbsp;db.prediction.analysis=plants &nbsp;&nbsp;\\    
 &nbsp;&nbsp;&nbsp;&nbsp;db.prediction.chemical_target=Antociani
+
+# Citation
+
+@article{BERTOGLIO2024109354,
+  title = {On-the-go table grape ripeness estimation via proximal snapshot hyperspectral imaging},
+  journal = {Computers and Electronics in Agriculture},
+  volume = {226},
+  pages = {109354},
+  year = {2024},
+  issn = {0168-1699},
+  doi = {https://doi.org/10.1016/j.compag.2024.109354},
+  url = {https://www.sciencedirect.com/science/article/pii/S0168169924007452},
+  author = {Riccardo Bertoglio and Manuel Piliego and Paolo Guadagna and Matteo Gatti and Stefano Poni and Matteo Matteucci}
+}
