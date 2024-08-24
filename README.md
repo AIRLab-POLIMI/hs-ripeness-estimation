@@ -105,7 +105,7 @@ $ python prediction/pls.py &nbsp;&nbsp;\\
 &nbsp;&nbsp;&nbsp;&nbsp;db.prediction.chemical_target=Antociani
 
 # Citation
-
+```
 @article{BERTOGLIO2024109354,
   title = {On-the-go table grape ripeness estimation via proximal snapshot hyperspectral imaging},
   journal = {Computers and Electronics in Agriculture},
@@ -117,3 +117,4 @@ $ python prediction/pls.py &nbsp;&nbsp;\\
   url = {https://www.sciencedirect.com/science/article/pii/S0168169924007452},
   author = {Riccardo Bertoglio and Manuel Piliego and Paolo Guadagna and Matteo Gatti and Stefano Poni and Matteo Matteucci}
 }
+```
